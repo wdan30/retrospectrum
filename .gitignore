@@ -1,3 +1,4 @@
 audio/
 data/
 venv/
+**/__pycache__/
