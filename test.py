@@ -19,11 +19,11 @@ def main():
 
     funny_square_wave.add_wave(funny_square)
     sine_wave.add_sine(256, 10)
-    triangle_wave.add_triangle(256, 10)
+    triangle_wave.add_triangle(256, 100)
     square_wave.add_square(256, 10)
     saw_wave.add_saw(256, 10)
 
-    funny_square_wave.plot()
+    #funny_square_wave.plot()
 
     funny_square_fourier = Fourier(funny_square_wave.wave, 44100)
     sine_fourier = Fourier(sine_wave.wave, 44100)
@@ -31,7 +31,11 @@ def main():
     square_fourier = Fourier(square_wave.wave, 44100)
     saw_fourier = Fourier(saw_wave.wave, 44100)
 
-    funny_square_fourier.plot_spectrum()
+    print(triangle_fourier.phases[::256])
+    plt.plot(triangle_fourier.phases)
+    plt.plot(triangle_fourier.amplitudes)
+    #triangle_fourier.plot_spectrum()
+    #plt.plot(triangle_fourier.phases)
     plt.show()
 
 def test_input_audio(filename):
@@ -110,5 +114,14 @@ def test_triangle_formula(): # test triangle formula at 128 Hz
     
     plt.show()
         
-    
-test_reverse_fourier("./audio/samples/churchbell.wav", 1000, 45100)
+#main()
+#test_reverse_fourier("./audio/samples/churchbell.wav", 1000, 45100)
+
+sine = SignalGenerator(duration=1)
+sine.add_square(256, 10)
+sine.plot()
+
+sine_fourier = Fourier(sine.wave, 44100)
+sine_fourier.plot_spectrum()
+
+plt.show()

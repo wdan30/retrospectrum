@@ -5,20 +5,49 @@
 
 using namespace std;
 
+enum WaveType {
+	Sine,
+	Triangle,
+	Square,
+	Saw
+};
+
+/*
 class Candidate {
 private:
 	vector<Wave> waves;
+	vector<float> amplitudes = vector<float>{ 15000, 0 };
+
+public:
+	void calculateAmplitudes() {
+		for (int i = 0; i < waves.size(); ++i) {
+			waves[i].addWave();
+		}
+	}
 };
+*/
 
 class Wave {
 private:
-	vector<complex<float>> fourier;
+	WaveType waveType;
+	double fundamental;
+	double amplitude;
 
 public:
-	void with_triangle_wave(int fundamental) {
-		int numHarmonics = 10;
-
-		for(int i = 0; i < numHarmonics)
+	Wave(double fundamental, double amplitude) {
+		this->fundamental = fundamental;
+		this->amplitude = amplitude;
 	}
 
+	vector<float> addWave() {
+		if (waveType == Sine) {
+			for (int freq = fundamental; freq <= 15000; freq += fundamental) {
+
+			}
+		}
+	}
+
+	WaveType getWaveType() {
+		return waveType;
+	}
 };
