@@ -5,4 +5,4 @@ venv/
 GeneticAlgorithm/.vs/
 **.vcxproj
 **.vcxproj.user
-**.vcxproj.user.filter
+**.vcxproj.filters
