@@ -2,3 +2,4 @@ audio/
 data/
 venv/
 **/__pycache__/
+GeneticAlgorithm/.vs/
