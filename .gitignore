@@ -1,8 +1,0 @@
-audio/
-data/
-venv/
-**/__pycache__/
-GeneticAlgorithm/.vs/
-**.vcxproj
-**.vcxproj.user
-**.vcxproj.filters
